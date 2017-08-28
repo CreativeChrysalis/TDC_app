@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+    <!-- instead of @post.author -->
+    by <%= @post.user.user_name %>
+</p>
+
+<p>
+  <strong>Blog entry:</strong>
+  <%= @post.blog_entry %>
+</p>
+
+<%= link_to 'Edit Post', edit_post_path(@post) %>
+
+
+<%= link_to 'Back', posts_path %>
+
+<h3>Leave a Comment:</h3>
+<div id="comments">
+
+    <%= render 'comments/form', comment: @comment %>
+
+    <% @post.comments.each do |comment| %>
+        <p>
+	   <strong> <%= comment.user.email %> said...<br/></strong>
+	    <%= comment.comment_entry %>
+    	</p>
+    <% end %>
+
+</div>

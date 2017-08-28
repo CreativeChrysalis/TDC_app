@@ -1,0 +1,32 @@
+<h1>Choose a Color!</h1>
+
+
+<!-- create a conditional message in our Index view
+using the name provided in the form in the About view. -->
+<% if !@name.nil? %>
+  <h2>Welcome Back, <%= @name %></h2>
+<% end %>
+
+<!-- Setup links to pass values through query strings  -->
+
+<p>
+    <%= link_to "Red", about_path(color: "red") %>
+</p>
+
+<p>
+    <%= link_to "Blue", about_path(color: "blue") %>
+</p>
+
+<p>
+    <%= link_to "Green", about_path(color: "green") %>
+</p>
+
+<p>
+    <%= link_to "Yellow", about_path(color: "yellow") %>
+</p>
+
+
+<!-- create post link -->
+<p>
+    <%= link_to "Create Post", posts_path%>
+</p>
